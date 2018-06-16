@@ -4,18 +4,24 @@ import { NgModule } from '@angular/core';
 //Import the Material Module
 import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 import { AppComponent } from './app.component';
+import { AnimeCardoComponent } from './anime-cardo/anime-cardo.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AnimeCardoComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
