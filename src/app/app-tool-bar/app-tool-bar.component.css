@@ -1,7 +1,3 @@
 .toolbar-content {
   margin-left: 16px;
 }
-
-mat-toolbar {
-  flex: 1 1 auto;
-}

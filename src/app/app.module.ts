@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav'
 
 //Root Angular Component
 import { AppComponent } from './app.component';
@@ -22,6 +23,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { WaifuCardoComponent } from './waifu-cardo/waifu-cardo.component';
 import { AppToolBarComponent } from './app-tool-bar/app-tool-bar.component';
 
+//Routing libs
 import { RouterModule, Routes } from '@angular/router';
 
 //Routing config
@@ -44,6 +46,7 @@ const appRoutes:Routes = [
     FlexLayoutModule,
     MatToolbarModule,
     MatIconModule,
+    MatSidenavModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: true} //<-- For debugging only
