@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'anime-cardo',
-  templateUrl: './anime-cardo.component.html',
-  styleUrls: ['./anime-cardo.component.css']
+  selector: 'waifu-cardo',
+  templateUrl: './waifu-cardo.component.html',
+  styleUrls: ['./waifu-cardo.component.css']
 })
-export class AnimeCardoComponent implements OnInit {
+export class WaifuCardoComponent implements OnInit {
 
   public img_url:string = "";
 
@@ -27,7 +27,6 @@ export class AnimeCardoComponent implements OnInit {
     return desired_waifu;
 
   }
-
   ngOnInit() {
   }
 

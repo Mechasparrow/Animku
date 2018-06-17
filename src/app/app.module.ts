@@ -11,12 +11,14 @@ import { AnimeCardoComponent } from './anime-cardo/anime-cardo.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { WaifuCardoComponent } from './waifu-cardo/waifu-cardo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimeCardoComponent,
-    HomePageComponent
+    HomePageComponent,
+    WaifuCardoComponent
   ],
   imports: [
     BrowserModule,
