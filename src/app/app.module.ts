@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AnimeCardoComponent } from './anime-cardo/anime-cardo.component';
 import { HomePageComponent } from './home-page/home-page.component';
 
+import { FlexLayoutModule } from "@angular/flex-layout";
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     BrowserModule,
     MatCardModule,
     MatButtonModule,
-    MatGridListModule
+    MatGridListModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
