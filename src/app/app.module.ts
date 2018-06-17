@@ -1,6 +1,7 @@
 //Required Angular Imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 //Import the Material Modules
 import { MatCardModule } from '@angular/material/card';
@@ -9,6 +10,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav'
+import {MatMenuModule} from '@angular/material/menu';
 
 //Root Angular Component
 import { AppComponent } from './app.component';
@@ -40,6 +42,7 @@ const appRoutes:Routes = [
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
     MatGridListModule,
@@ -47,6 +50,7 @@ const appRoutes:Routes = [
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
+    MatMenuModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: true} //<-- For debugging only
