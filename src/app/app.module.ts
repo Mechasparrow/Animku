@@ -6,6 +6,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -27,6 +28,7 @@ import { AppToolBarComponent } from './app-tool-bar/app-tool-bar.component';
     MatButtonModule,
     MatGridListModule,
     MatToolbarModule,
+    MatIconModule,
     FlexLayoutModule
   ],
   providers: [],
