@@ -2,3 +2,7 @@ h1 {
   font-family: 'Roboto', helvetica;
   text-align: center;
 }
+
+.home-page {
+  margin: 8px;
+}
