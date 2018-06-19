@@ -8,6 +8,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 
 //Root Angular Component
 import { AppComponent } from './app.component';
@@ -44,6 +45,7 @@ const appRoutes:Routes = [
     FlexLayoutModule,
     MatToolbarModule,
     MatIconModule,
+    MatListModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: true} //<-- For debugging only
