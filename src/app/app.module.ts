@@ -11,6 +11,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav'
 import {MatMenuModule} from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list';
 
 //Root Angular Component
 import { AppComponent } from './app.component';
@@ -51,6 +52,7 @@ const appRoutes:Routes = [
     MatIconModule,
     MatSidenavModule,
     MatMenuModule,
+    MatListModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: true} //<-- For debugging only
