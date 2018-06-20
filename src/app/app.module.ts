@@ -21,6 +21,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 
 //Pages for app
 import { HomePageComponent } from './home-page/home-page.component';
+import { WaifuPageComponent } from './waifu-page/waifu-page.component';
 
 //Developed Components for Application
 import { WaifuCardoComponent } from './waifu-cardo/waifu-cardo.component';
@@ -28,11 +29,11 @@ import { AppToolBarComponent } from './app-tool-bar/app-tool-bar.component';
 
 //Routing libs
 import { RouterModule, Routes } from '@angular/router';
-import { WaifuPageComponent } from './waifu-page/waifu-page.component';
 
 //Routing config
 const appRoutes:Routes = [
-  {path: '', component: HomePageComponent}
+  {path: '', component: HomePageComponent},
+  {path: 'waifus', component: WaifuPageComponent}
 ]
 
 @NgModule({
