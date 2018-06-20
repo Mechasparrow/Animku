@@ -28,6 +28,7 @@ import { AppToolBarComponent } from './app-tool-bar/app-tool-bar.component';
 
 //Routing libs
 import { RouterModule, Routes } from '@angular/router';
+import { WaifuPageComponent } from './waifu-page/waifu-page.component';
 
 //Routing config
 const appRoutes:Routes = [
@@ -39,7 +40,8 @@ const appRoutes:Routes = [
     AppComponent,
     HomePageComponent,
     WaifuCardoComponent,
-    AppToolBarComponent
+    AppToolBarComponent,
+    WaifuPageComponent
   ],
   imports: [
     BrowserModule,
