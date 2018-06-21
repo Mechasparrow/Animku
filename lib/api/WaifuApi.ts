@@ -18,6 +18,7 @@ import {Waifu} from '../../models/Waifu';
 
 @Injectable()
 
+//Interface responsible for getting us our waifus
 export class WaifuApi {
 
   //The api endpoint for the waifus
