@@ -32,6 +32,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
+//REST Lib
+import {HttpClientModule} from '@angular/common/http';
+
 //Routing config
 const appRoutes:Routes = [
   {path: '', component: HomePageComponent},
@@ -47,6 +50,7 @@ const appRoutes:Routes = [
     WaifuPageComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
