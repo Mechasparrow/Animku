@@ -15,7 +15,7 @@ export class WaifuPageComponent implements OnInit {
 
   ngOnInit() {
     console.log("getting waifus..");
-    this.api.getWaifus();
+    this.api.getBestWaifus();
   }
 
 }
