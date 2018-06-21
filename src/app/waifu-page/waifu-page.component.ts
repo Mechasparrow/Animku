@@ -14,7 +14,8 @@ import {Waifu} from '../../../models/Waifu';
 })
 export class WaifuPageComponent implements OnInit {
 
-  public rando_waifu:Waifu;
+
+  public random_waifus:Waifu[];
 
   constructor(private api:WaifuApi) {
   }
@@ -24,9 +25,17 @@ export class WaifuPageComponent implements OnInit {
 
     let that = this;
 
-    this.api.getRandomWaifu().then (function (random_waifu:Waifu) {
-      that.rando_waifu = random_waifu;
-    });
+    var promises = [];
+
+    for (var i = 0; i < 3; i ++) {
+      promises.push(this.api.getRandomWaifu());
+    }
+
+    Promise.all(promises).then (function (random_waifus:Waifu[]) {
+      that.random_waifus = random_waifus;
+    }).catch (function (err) {
+      console.log(err);
+    })
 
   }
 

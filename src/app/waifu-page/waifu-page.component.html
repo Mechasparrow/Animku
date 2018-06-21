@@ -2,17 +2,9 @@
 
 <div class = "waifu-page">
 
-  <div *ngIf = "rando_waifu">
-    <div fxLayout.xs = "column" fxLayoutGap="10px" fxLayoutGap.xs="10px">
-        <div fxFlex class = "item item-1">
-          <waifu-cardo [waifu] = "rando_waifu"></waifu-cardo>
-        </div>
-        <div fxFlex class = "item item-2">
-          <waifu-cardo [waifu] = "rando_waifu"></waifu-cardo>
-        </div>
-        <div fxFlex class = "item item-3">
-          <waifu-cardo [waifu] = "rando_waifu"></waifu-cardo>
-        </div>
+  <div *ngIf = "random_waifus">
+    <div *ngFor = "let waifu of random_waifus" class = "waifu-cards" fxLayout.xs = "column" fxLayoutGap="10px" fxLayoutGap.xs="10px" fxLayoutAlign="space-around" >
+          <waifu-cardo *ngFor = "let waifu of random_waifus" fxLayoutAlign="stretch" class = "item" [waifu] = "waifu"></waifu-cardo>
     </div>
   </div>
 
