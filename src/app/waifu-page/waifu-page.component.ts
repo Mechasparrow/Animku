@@ -17,14 +17,17 @@ export class WaifuPageComponent implements OnInit {
   public rando_waifu:Waifu;
 
   constructor(private api:WaifuApi) {
-    this.rando_waifu = <Waifu>{
-      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTls08Zz-1F61zYqYoc_1IR2f--OmjaMDPKS7HJPmU2HZECJlsECQ"
-    };
   }
 
   ngOnInit() {
     console.log("getting waifus..");
-    this.api.getBestWaifus();
+
+    let that = this;
+
+    this.api.getRandomWaifu().then (function (random_waifu:Waifu) {
+      that.rando_waifu = random_waifu;
+    });
+
   }
 
 }

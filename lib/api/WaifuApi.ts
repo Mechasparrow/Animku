@@ -66,4 +66,25 @@ export class WaifuApi {
 
   }
 
+  //Returns a random waifu
+  getRandomWaifu() {
+
+    let that = this;
+
+    var waifu_promise = new Promise ((resolve, reject) => {
+
+      that.getBestWaifus()
+        .then (function (waifus:Waifu[]) {
+          var random_waifu:Waifu = waifus[Math.floor(Math.random()*waifus.length)];
+          resolve(random_waifu);
+        }).catch (function (error) {
+          reject(error);
+        });
+    })
+
+    return waifu_promise;
+
+  }
+
+
 }
