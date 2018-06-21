@@ -66,14 +66,50 @@ export class WaifuApi {
 
   }
 
-  //Returns a random waifu
-  getRandomWaifu() {
+  //Get the trashy waifus
+  getTrashWaifus() {
+
+    let that = this;
+
+    var waifu_promise = new Promise((resolve, reject) => {
+      this.http.get(this.api_endpoint + '/scrape/trash')
+        .toPromise()
+        .then ((data) => {
+          var waifus:Waifu[] = (<any>data).map((raw_waifu) => {
+            return that.parseRawWaifu(raw_waifu);
+          });
+          resolve(waifus);
+
+        })
+        .catch ((error) => {
+          reject(error);
+        })
+    })
+
+    return waifu_promise;
+
+  }
+
+
+  //Returns a random waifus
+  getRandomWaifu(mode:string) {
 
     let that = this;
 
     var waifu_promise = new Promise ((resolve, reject) => {
 
-      that.getBestWaifus()
+      var waifus_promise;
+
+      switch (mode) {
+        case 'best':
+          waifus_promise = that.getBestWaifus();
+          break;
+        case 'trash':
+          waifus_promise = that.getTrashWaifus();
+          break;
+      }
+
+      waifus_promise
         .then (function (waifus:Waifu[]) {
           var random_waifu:Waifu = waifus[Math.floor(Math.random()*waifus.length)];
           resolve(random_waifu);

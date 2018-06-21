@@ -28,7 +28,7 @@ export class WaifuPageComponent implements OnInit {
     var promises = [];
 
     for (var i = 0; i < 3; i ++) {
-      promises.push(this.api.getRandomWaifu());
+      promises.push(this.api.getRandomWaifu('best'));
     }
 
     Promise.all(promises).then (function (random_waifus:Waifu[]) {
