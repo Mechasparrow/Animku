@@ -91,6 +91,36 @@ export class WaifuApi {
   }
 
 
+  //Generates a waifu matrix;
+  public generateWaifuMatrix(waifus:Waifu[], cols:number){
+
+    var waifu_rows_cnt:number = Math.ceil(waifus.length / cols);
+
+    var waifus_stack:Waifu[] = waifus.slice();
+
+    var waifus_matrix:Waifu[][] = [];
+
+    for (var i = 0; i < waifu_rows_cnt; i++) {
+
+      var waifu_small_list:Waifu[] = [];
+
+      for (var c = 0; c < cols; c++) {
+        if (waifus_stack.length > 0) {
+          var removed_waifu:Waifu = waifus_stack.pop();
+
+          waifu_small_list.push(removed_waifu);
+        }
+      }
+
+      waifus_matrix.push(waifu_small_list);
+
+
+    }
+
+    return waifus_matrix;
+
+  }
+
   //Returns a random waifus
   getRandomWaifu(mode:string) {
 

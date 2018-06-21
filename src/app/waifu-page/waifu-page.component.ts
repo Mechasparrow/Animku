@@ -17,6 +17,8 @@ export class WaifuPageComponent implements OnInit {
 
   public random_waifus:Waifu[];
 
+  public waifu_matrix:Waifu[][];
+
   constructor(private api:WaifuApi) {
   }
 
@@ -25,16 +27,8 @@ export class WaifuPageComponent implements OnInit {
 
     let that = this;
 
-    var promises = [];
-
-    for (var i = 0; i < 3; i ++) {
-      promises.push(this.api.getRandomWaifu('best'));
-    }
-
-    Promise.all(promises).then (function (random_waifus:Waifu[]) {
-      that.random_waifus = random_waifus;
-    }).catch (function (err) {
-      console.log(err);
+    this.api.getBestWaifus().then (function (waifus:Waifu[]) {
+      that.waifu_matrix = that.api.generateWaifuMatrix(waifus, 3);
     })
 
   }
