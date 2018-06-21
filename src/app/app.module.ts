@@ -29,6 +29,8 @@ import { AppToolBarComponent } from './app-tool-bar/app-tool-bar.component';
 
 //Routing libs
 import { RouterModule, Routes } from '@angular/router';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 //Routing config
 const appRoutes:Routes = [
@@ -59,7 +61,8 @@ const appRoutes:Routes = [
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: true} //<-- For debugging only
-    )
+    ),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
