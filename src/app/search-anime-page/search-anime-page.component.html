@@ -1,0 +1,11 @@
+<div class = "search-anime-page">
+
+  <form fxLayout.xs = 'column' fxLayoutGap = "16px" class = "search-form">
+    <mat-form-field fxFlex = "90%" class = "item search-field">
+      <input [(ngModel)] = "anime_query" name = "anime_query" matInput placeholder = "search somethin">
+    </mat-form-field>
+
+    <button (click) = "searchAnime()" fxFlex = '10%' class = "item search-button" mat-raised-button color = "accent">Search</button>
+  </form>
+
+</div>

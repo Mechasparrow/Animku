@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+//Import for Angular Forms
+import { FormsModule }   from '@angular/forms';
+
 //Import the Material Modules
 import { MatCardModule } from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
@@ -12,6 +15,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav'
 import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 //Root Angular Component
 import { AppComponent } from './app.component';
@@ -34,11 +39,13 @@ import { environment } from '../environments/environment';
 
 //REST Lib
 import {HttpClientModule} from '@angular/common/http';
+import { SearchAnimePageComponent } from './search-anime-page/search-anime-page.component';
 
 //Routing config
 const appRoutes:Routes = [
   {path: '', component: HomePageComponent},
-  {path: 'waifus', component: WaifuPageComponent}
+  {path: 'waifus', component: WaifuPageComponent},
+  {path: 'search-anime', component: SearchAnimePageComponent}
 ]
 
 @NgModule({
@@ -47,11 +54,13 @@ const appRoutes:Routes = [
     HomePageComponent,
     WaifuCardoComponent,
     AppToolBarComponent,
-    WaifuPageComponent
+    WaifuPageComponent,
+    SearchAnimePageComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatCardModule,
     MatButtonModule,
@@ -62,6 +71,8 @@ const appRoutes:Routes = [
     MatSidenavModule,
     MatMenuModule,
     MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: true} //<-- For debugging only

@@ -10,7 +10,12 @@ import { catchError, map, tap } from 'rxjs/operators';
 
 //Interface responsible for getting us our animes
 
+//Using the Jikan api for MyAnimeList
+//https://github.com/jikan-me/jikan
+
 export class AnimeApi {
+
+  private api_endpoint:string = "https://api.jikan.moe"
 
   constructor() {
 
