@@ -45,7 +45,6 @@ export class AnimeApi {
             var animes:Anime[] = <Anime[]>results.map(function (raw_anime) {
               return that.parseRawAnime(raw_anime);
             })
-            console.log(animes);
             resolve(animes);
           })
           .catch ((error) => {

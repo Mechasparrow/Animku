@@ -8,4 +8,10 @@
     <button (click) = "searchAnime()" fxFlex = '10%' class = "item search-button" mat-raised-button color = "accent">Search</button>
   </form>
 
+  <div *ngIf = "search_results" class = "anime-results">
+    <div *ngFor = "let anime of search_results" class ="anime-result">
+      <anime-cardo  [anime] = "anime"></anime-cardo>
+    </div>
+  </div>
+
 </div>

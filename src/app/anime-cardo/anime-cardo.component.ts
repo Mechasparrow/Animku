@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 //Import the Anime model
 import {Anime} from '../../../models/Anime';
@@ -9,6 +9,8 @@ import {Anime} from '../../../models/Anime';
   styleUrls: ['./anime-cardo.component.css']
 })
 export class AnimeCardoComponent implements OnInit {
+
+  @Input() anime:Anime;
 
   constructor() { }
 

@@ -5,3 +5,11 @@
 .search-field {
   width: 80%;
 }
+
+.anime-results {
+  margin-top: 16px;
+}
+
+.anime-result {
+  margin-bottom: 16px;
+}
