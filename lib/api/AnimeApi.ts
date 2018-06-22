@@ -9,7 +9,7 @@ import { catchError, map, tap } from 'rxjs/operators';
 //Model
 import {Anime} from '../../models/Anime';
 
-@Injectable();
+@Injectable()
 
 //Interface responsible for getting us our animes
 
@@ -20,14 +20,40 @@ export class AnimeApi {
 
   private api_endpoint:string = "https://api.jikan.moe"
 
-  constructor() {
+  constructor(private http:HttpClient) {
+
+  }
+
+  private parseRawAnime(raw_anime:any) {
+
+    return (<Anime>raw_anime);
 
   }
 
   //Get the animez from the search query
   search(anime_name:string) {
 
+      console.log("running search..");
 
+      let that = this;
+
+      var anime_promise = new Promise((resolve, reject) => {
+        that.http.get(that.api_endpoint + "/search/anime/" + anime_name + "/")
+          .toPromise()
+          .then ((data) => {
+            var results = data['result'];
+            var animes:Anime[] = <Anime[]>results.map(function (raw_anime) {
+              return that.parseRawAnime(raw_anime);
+            })
+            console.log(animes);
+            resolve(animes);
+          })
+          .catch ((error) => {
+            reject(error);
+          })
+      });
+
+      return anime_promise;
 
   }
 

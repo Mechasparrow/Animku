@@ -40,6 +40,7 @@ import { environment } from '../environments/environment';
 //REST Lib
 import {HttpClientModule} from '@angular/common/http';
 import { SearchAnimePageComponent } from './search-anime-page/search-anime-page.component';
+import { AnimeCardoComponent } from './anime-cardo/anime-cardo.component';
 
 //Routing config
 const appRoutes:Routes = [
@@ -55,7 +56,8 @@ const appRoutes:Routes = [
     WaifuCardoComponent,
     AppToolBarComponent,
     WaifuPageComponent,
-    SearchAnimePageComponent
+    SearchAnimePageComponent,
+    AnimeCardoComponent
   ],
   imports: [
     HttpClientModule,
