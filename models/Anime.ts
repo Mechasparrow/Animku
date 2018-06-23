@@ -1,4 +1,6 @@
 
+import {Entertainment} from './Entertainment';
+
 /**
 description
 episodes
@@ -11,18 +13,14 @@ url
 "https://myanimelist.net/anime/9253/Steins_Gate"
 **/
 
-export class Anime {
+export class Anime extends Entertainment {
 
-  description:string;
   episodes:number;
-  image_url:string;
   score:number;
-  title:string
   type:string;
-  url:string;
 
   constructor() {
-
+    super();
   }
 
 }
