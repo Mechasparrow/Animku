@@ -7,6 +7,7 @@ import {Anime} from '../../../models/Anime';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 
 //TODO add the routing params thingy
+import {NavigationExtras} from '@angular/router';
 
 @Component({
   selector: 'anime-cardo',
@@ -29,7 +30,13 @@ export class AnimeCardoComponent implements OnInit {
   //Route to the anime page
   viewAnime() {
 
-    this.router.navigate(['/view-anime']);
+    let navExtras: NavigationExtras = {
+      queryParams: {
+        'anime': JSON.stringify(this.anime)
+      }
+    }
+
+    this.router.navigate(['/view-anime'], navExtras);
 
   }
 

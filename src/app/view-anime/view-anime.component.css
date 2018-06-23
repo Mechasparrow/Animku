@@ -1,0 +1,21 @@
+.view-anime-page {
+    margin: 8px;
+    max-width: 48rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.anime-title {
+    text-align: center;
+}
+
+.anime-description {
+  padding: 8px;
+}
+
+.anime-img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 220px;
+  height: auto;
+}

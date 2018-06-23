@@ -1,3 +1,19 @@
-<p>
-  view-anime works!
-</p>
+<div class = "view-anime-page">
+
+  <h1 class = "anime-title mat-display-2">{{the_anime.title}}</h1>
+
+  <div fxLayout="column">
+    <img fxFlex class ="anime-img" src = "{{the_anime.image_url}}"/>
+  </div>
+
+
+  <p class = "anime-description mat-body-1">
+    {{the_anime.description}}
+  </p>
+
+  <div class = "anime-buttons">
+      <a mat-button href="{{the_anime.url}}">View on MAL</a>
+      <button mat-button>Add to Collection</button><!-- TODO Implement me -->
+  </div>
+
+</div>
