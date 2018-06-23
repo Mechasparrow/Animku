@@ -1,4 +1,3 @@
-
 import {Entertainment} from './Entertainment';
 
 export class Collection {
@@ -14,6 +13,7 @@ export class Collection {
   //Add item to collection
   public addToCollection(entertainment:Entertainment) {
     this.content_list.push(entertainment);
+    return <Collection>this;
   }
 
   //Removes item from collection

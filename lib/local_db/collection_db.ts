@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 //Collection model
-import {Colllection} from '../../models/Collection';
+import {Collection} from '../../models/Collection';
 
 import * as localForage from "localforage";
 
@@ -12,16 +12,35 @@ export class CollectionDatabase {
 
   }
 
+  //parses a raw collection
+  private parseRawCollection(raw_collection:any) {
+
+    var new_collection = new Collection(raw_collection.name);
+
+    new_collection.content_list = raw_collection.content_list;
+
+    return new_collection;
+
+  }
+
   //Get the collection of entertainment
-  getCollection(){
+  public getCollection(){
+
+    let that = this;
 
     var collection_promise = new Promise((resolve, reject) =>{
       localForage.getItem('collection').then (function (collection:Collection) {
-        resolve(<Collection>collection);
+        if (collection === null) {
+          //If there is an null, just return a new collection
+          var new_collection:Collection = new Collection("default");
+          resolve(new_collection);
+
+        }
+
+        resolve(that.parseRawCollection(collection));
       }).catch (function (error) {
-        //If there is an error, just return a new collection
-        var new_collection = new Collection("default");
-        resolve(new_collection);
+
+        reject(error);
       })
     });
 
@@ -31,11 +50,13 @@ export class CollectionDatabase {
   }
 
   // Update the collection of entertainment
-  updateCollection(collection:Collection) {
+  public updateCollection(collection:Collection) {
+
+    let that = this;
 
     var collection_promise = new Promise((resolve, reject) => {
       localForage.setItem('collection', collection).then (function (data) {
-        resolve(<Collection>data);
+        resolve(that.parseRawCollection(data));
       }).catch (function (error) {
         reject(error);
       })

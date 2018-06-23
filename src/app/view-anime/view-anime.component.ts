@@ -11,10 +11,14 @@ import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 import { Observable }         from 'rxjs';
 import { map }                from 'rxjs/operators';
 
+//Import collection database system
+import {CollectionDatabase} from '../../../lib/local_db/collection_db';
+
 @Component({
   selector: 'app-view-anime',
   templateUrl: './view-anime.component.html',
-  styleUrls: ['./view-anime.component.css']
+  styleUrls: ['./view-anime.component.css'],
+  providers: [CollectionDatabase]
 })
 export class ViewAnimeComponent implements OnInit {
 
@@ -22,7 +26,8 @@ export class ViewAnimeComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router:Router
+    private router:Router,
+    private database: CollectionDatabase
   ) { }
 
   ngOnInit() {
@@ -40,6 +45,21 @@ export class ViewAnimeComponent implements OnInit {
   //TODO implement me
   addAnime() {
 
+    let that = this;
+
+    this.database.getCollection().then (function (the_collection:Collection) {
+
+      console.log(the_collection)
+      var updated_collection:Collection = the_collection.addToCollection(that.the_anime)
+
+
+      return that.database.updateCollection(updated_collection);
+
+    }).then (function (the_updated_collection:Collection) {
+      console.log(the_updated_collection);
+    }).catch (function (err) {
+      console.log(err);
+    })
 
   }
 
