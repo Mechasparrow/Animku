@@ -41,12 +41,14 @@ import { environment } from '../environments/environment';
 import {HttpClientModule} from '@angular/common/http';
 import { SearchAnimePageComponent } from './search-anime-page/search-anime-page.component';
 import { AnimeCardoComponent } from './anime-cardo/anime-cardo.component';
+import { ViewAnimeComponent } from './view-anime/view-anime.component';
 
 //Routing config
 const appRoutes:Routes = [
   {path: '', component: HomePageComponent},
   {path: 'waifus', component: WaifuPageComponent},
-  {path: 'search-anime', component: SearchAnimePageComponent}
+  {path: 'search-anime', component: SearchAnimePageComponent},
+  {path: 'view-anime', component: ViewAnimeComponent}
 ]
 
 @NgModule({
@@ -57,7 +59,8 @@ const appRoutes:Routes = [
     AppToolBarComponent,
     WaifuPageComponent,
     SearchAnimePageComponent,
-    AnimeCardoComponent
+    AnimeCardoComponent,
+    ViewAnimeComponent
   ],
   imports: [
     HttpClientModule,
