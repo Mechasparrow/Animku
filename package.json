@@ -25,11 +25,12 @@
     "@angular/platform-browser-dynamic": "^6.0.6",
     "@angular/pwa": "^0.6.8",
     "@angular/router": "^6.0.6",
+    "@angular/service-worker": "^6.0.6",
     "core-js": "^2.4.1",
+    "localforage": "^1.7.2",
     "rxjs": "^6.2.1",
     "rxjs-compat": "^6.0.0-rc.0",
-    "zone.js": "^0.8.19",
-    "@angular/service-worker": "^6.0.6"
+    "zone.js": "^0.8.19"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.6.8",
