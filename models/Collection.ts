@@ -12,13 +12,13 @@ export class Collection {
   }
 
   //Add item to collection
-  public addToCollection() {
-
+  public addToCollection(entertainment:Entertainment) {
+    this.content_list.push(entertainment);
   }
 
   //Removes item from collection
   public removeFromCollection(idx:number) {
-
+    this.content_list.splice(idx, 1);
   }
 
 }

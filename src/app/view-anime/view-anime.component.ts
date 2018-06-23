@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 //Import the anime model
 import {Anime} from '../../../models/Anime';
+import {Collection} from '../../../models/Collection';
 
 //Import the routing libs
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
@@ -34,6 +35,12 @@ export class ViewAnimeComponent implements OnInit {
 
     this.the_anime = <Anime> JSON.parse(this.route.snapshot.queryParamMap.get('anime'));
     console.log(this.the_anime);
+  }
+
+  //TODO implement me
+  addAnime() {
+
+
   }
 
 }
