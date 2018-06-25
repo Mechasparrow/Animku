@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+
+//Import the entertainment model
+import {Entertainment} from '../../../models/Entertainment';
 
 @Component({
   selector: 'app-entertainment-cardo',
@@ -6,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./entertainment-cardo.component.css']
 })
 export class EntertainmentCardoComponent implements OnInit {
+
+  @Input() entertainment:Entertainment;
 
   constructor() { }
 
