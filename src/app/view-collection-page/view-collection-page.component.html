@@ -1,3 +1,13 @@
-<p>
-  view-collection-page works!
-</p>
+<div class = "collection-page">
+
+  <h1 class = "collection-title mat-display-2">Main Collection</h1>
+
+  <div *ngIf = "collection" class = "collection-cardos">
+
+    <div class = "collection-content-item" *ngFor = "let entertainment of collection.content_list">
+      <entertainment-cardo [entertainment] = "entertainment"></entertainment-cardo>
+    </div>
+
+  </div>
+
+</div>

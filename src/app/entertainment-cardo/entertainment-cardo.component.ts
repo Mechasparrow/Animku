@@ -4,7 +4,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {Entertainment} from '../../../models/Entertainment';
 
 @Component({
-  selector: 'app-entertainment-cardo',
+  selector: 'entertainment-cardo',
   templateUrl: './entertainment-cardo.component.html',
   styleUrls: ['./entertainment-cardo.component.css']
 })
