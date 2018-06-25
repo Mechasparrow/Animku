@@ -44,6 +44,7 @@ import { AnimeCardoComponent } from './anime-cardo/anime-cardo.component';
 import { ViewAnimeComponent } from './view-anime/view-anime.component';
 import { ViewCollectionPageComponent } from './view-collection-page/view-collection-page.component';
 import { EntertainmentCardoComponent } from './entertainment-cardo/entertainment-cardo.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 //Routing config
 const appRoutes:Routes = [
@@ -51,7 +52,8 @@ const appRoutes:Routes = [
   {path: 'waifus', component: WaifuPageComponent},
   {path: 'search-anime', component: SearchAnimePageComponent},
   {path: 'view-anime', component: ViewAnimeComponent},
-  {path: 'view-collection', component: ViewCollectionPageComponent}
+  {path: 'view-collection', component: ViewCollectionPageComponent},
+  {path: 'profile', component: ProfilePageComponent}
 ]
 
 @NgModule({
@@ -65,7 +67,8 @@ const appRoutes:Routes = [
     AnimeCardoComponent,
     ViewAnimeComponent,
     ViewCollectionPageComponent,
-    EntertainmentCardoComponent
+    EntertainmentCardoComponent,
+    ProfilePageComponent
   ],
   imports: [
     HttpClientModule,
