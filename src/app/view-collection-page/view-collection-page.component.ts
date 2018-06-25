@@ -20,16 +20,16 @@ export class ViewCollectionPageComponent implements OnInit {
 
   constructor(
     private database: CollectionDatabase
-  ) {
-
-
-
-  }
+  ) {}
 
   ngOnInit() {
 
     //Retrieve the collection
+    this.refreshCollection();
 
+  }
+
+  public refreshCollection() {
     let that = this;
 
     that.database.getCollection()
@@ -40,9 +40,15 @@ export class ViewCollectionPageComponent implements OnInit {
       .catch ((error) => {
         console.log(error);
       })
-
   }
 
+  public onDelete(deleted:boolean, idx: number) {
+    this.collection.removeFromCollection(idx);
 
+    let that = this;
+    this.database.updateCollection(this.collection).then (function (res) {
+      that.refreshCollection();
+    })
+  }
 
 }

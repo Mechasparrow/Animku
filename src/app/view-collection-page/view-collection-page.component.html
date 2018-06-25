@@ -4,8 +4,8 @@
 
   <div *ngIf = "collection" class = "collection-cardos">
 
-    <div class = "collection-content-item" *ngFor = "let entertainment of collection.content_list">
-      <entertainment-cardo [entertainment] = "entertainment"></entertainment-cardo>
+    <div class = "collection-content-item" *ngFor = "let entertainment of collection.content_list; index as i">
+      <entertainment-cardo (delete) = "onDelete($event, i)" [entertainment] = "entertainment"></entertainment-cardo>
     </div>
 
   </div>
