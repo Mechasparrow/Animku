@@ -19,8 +19,8 @@ export class Anime extends Entertainment {
   score:number;
   type:string;
 
-  constructor() {
-    super();
+  constructor(title:string, description:string, image_url:string, url:string) {
+    super(title, description, image_url, url);
   }
 
 }

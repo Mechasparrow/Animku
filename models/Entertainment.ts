@@ -5,6 +5,11 @@ export class Entertainment {
   image_url:string;
   url:string;
 
-  constructor(){}
+  constructor(title:string, description:string, image_url:string, url:string){
+    this.title = title;
+    this.description = description;
+    this.image_url = image_url;
+    this.url = url;
+  }
 
 }
