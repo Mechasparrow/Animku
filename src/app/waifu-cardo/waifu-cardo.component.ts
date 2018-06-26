@@ -12,17 +12,22 @@ export class WaifuCardoComponent implements OnInit {
 
   @Input() waifu:Waifu;
 
-  public img_url:string;
-
   constructor() {
 
   }
 
+  //Get the image of the waifu
   public getWaifuImage() {
 
     return (this.waifu.image_url || "");
 
   }
+
+  //TODO route to waifu view page
+  public viewWaifu() {
+    console.log("view waifu")
+  }
+
   ngOnInit() {
      this.img_url = this.getWaifuImage();
   }
