@@ -3,6 +3,11 @@ import { Component, OnInit, Input } from '@angular/core';
 //Import the Waifu Model
 import {Waifu} from '../../../models/Waifu';
 
+//Import the routing libs
+import {Router, ActivatedRoute, ParamMap} from '@angular/router';
+
+import {NavigationExtras} from '@angular/router';
+
 @Component({
   selector: 'waifu-cardo',
   templateUrl: './waifu-cardo.component.html',
@@ -12,7 +17,10 @@ export class WaifuCardoComponent implements OnInit {
 
   @Input() waifu:Waifu;
 
-  constructor() {
+  constructor(
+    private route: ActivatedRoute,
+    private router:Router
+  ) {
 
   }
 
@@ -23,9 +31,18 @@ export class WaifuCardoComponent implements OnInit {
 
   }
 
-  //TODO route to waifu view page
+  //route to waifu view page
   public viewWaifu() {
-    console.log("view waifu")
+
+    let navExtras: NavigationExtras = {
+      queryParams: {
+        'waifu': JSON.stringify(this.waifu)
+      }
+    }
+
+
+    this.router.navigate(['/view-waifu'], navExtras);
+
   }
 
   ngOnInit() {

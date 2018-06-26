@@ -1,7 +1,7 @@
 
 export class Waifu {
 
-  private waifu_link_endpoint:string = "https://mywaifulist.moe/waifu/";
+  static waifu_link_endpoint:string = "https://mywaifulist.moe/waifu/";
 
   public image_url:string;
   public name:string;
@@ -17,11 +17,23 @@ export class Waifu {
 
   }
 
-  public generateWaifuLink() {
+  public generateWaifuLink(): string {
 
-    return this.waifu_link_endpoint + this.slug;
+    var waifu_link:string = Waifu.waifu_link_endpoint + this.slug;
+    return waifu_link;
 
   }
 
+  static generateWaifuOffJson(waifu_json:any): Waifu {
+
+    let waifu = Object.create(Waifu.prototype);
+    return Object.assign(waifu, waifu_json);
+
+  }
+
+  static generateWaifuOffJsonString(waifu_json_string:string): Waifu {
+    var waifu_json = JSON.parse(waifu_json_string);
+    return Waifu.generateWaifuOffJson(waifu_json);
+  }
 
 }

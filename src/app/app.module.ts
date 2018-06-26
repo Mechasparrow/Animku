@@ -45,6 +45,7 @@ import { ViewAnimeComponent } from './view-anime/view-anime.component';
 import { ViewCollectionPageComponent } from './view-collection-page/view-collection-page.component';
 import { EntertainmentCardoComponent } from './entertainment-cardo/entertainment-cardo.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { WaifuViewComponent } from './waifu-view/waifu-view.component';
 
 //Routing config
 const appRoutes:Routes = [
@@ -52,6 +53,7 @@ const appRoutes:Routes = [
   {path: 'waifus', component: WaifuPageComponent},
   {path: 'search-anime', component: SearchAnimePageComponent},
   {path: 'view-anime', component: ViewAnimeComponent},
+  {path: 'view-waifu', component: WaifuViewComponent},
   {path: 'view-collection', component: ViewCollectionPageComponent},
   {path: 'profile', component: ProfilePageComponent}
 ]
@@ -68,7 +70,8 @@ const appRoutes:Routes = [
     ViewAnimeComponent,
     ViewCollectionPageComponent,
     EntertainmentCardoComponent,
-    ProfilePageComponent
+    ProfilePageComponent,
+    WaifuViewComponent
   ],
   imports: [
     HttpClientModule,
