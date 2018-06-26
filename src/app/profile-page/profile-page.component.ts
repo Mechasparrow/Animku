@@ -21,7 +21,11 @@ export class ProfilePageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.refreshProfile();
+  }
 
+  //Refresh the profile
+  public refreshProfile() {
     let that = this;
 
     this.database.getProfile().then (function (profile:Profile) {
@@ -29,6 +33,25 @@ export class ProfilePageComponent implements OnInit {
       console.log(that.user_profile);
     }).catch (function (error) {
       console.log(error);
+    })
+  }
+
+  //KILLTHISCODE this is for testing purposes only
+  public testProfileCase() {
+
+    var test_profile:Profile = new Profile(
+      "Michael",
+      "Michael is a student who has too much time on his hands, so he watchs anime and codes stuff. He also likes Steins;Gate",
+      null,
+      null
+    )
+
+    let that = this;
+
+    this.database.updateProfile(test_profile).then (function (data:Profile) {
+      that.refreshProfile();
+    }).catch (function (err) {
+      console.log(err);
     })
 
   }
