@@ -46,7 +46,7 @@ export class WaifuCardoComponent implements OnInit {
   }
 
   ngOnInit() {
-     this.img_url = this.getWaifuImage();
+     
   }
 
 }
