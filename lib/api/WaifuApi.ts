@@ -35,11 +35,7 @@ export class WaifuApi {
   //Parses the raw waifu JSON data;
   private parseRawWaifu(raw_waifu:any) {
 
-    return (<Waifu>{
-      image_url: raw_waifu["display_picture"],
-      name: raw_waifu["name"],
-      description: raw_waifu["description"]
-    });
+    return new Waifu(raw_waifu["name"], raw_waifu["description"], raw_waifu["display_picture"], raw_waifu["slug"]);
 
   }
 
@@ -55,6 +51,7 @@ export class WaifuApi {
           var waifus:Waifu[] = (<any>data).map((raw_waifu) => {
             return that.parseRawWaifu(raw_waifu);
           });
+          console.log(waifus);
           resolve(waifus);
 
         })
