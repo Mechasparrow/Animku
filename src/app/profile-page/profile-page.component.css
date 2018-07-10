@@ -1,8 +1,18 @@
 .profile-page {
   margin: 8px;
-  max-width: 50rem;
+  max-width: 65rem;
   margin-left:auto;
   margin-right:auto;
+
+}
+
+.btn-edit {
+  margin-bottom: 32px;
+
+}
+
+.btn-edit button {
+  width: 20%;
 }
 
 .waifu-img {
@@ -35,7 +45,12 @@
 }
 
 .profile-bio {
-  margin-top: 16px
+  margin-top: 16px;
+}
+
+.profile-content {
+  padding-left: 16px;
+  padding-right: 16px;
 }
 
 .profile-name {

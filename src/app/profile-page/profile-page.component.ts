@@ -9,6 +9,9 @@ import {Waifu} from '../../../models/Waifu';
 import {Entertainment} from '../../../models/Entertainment';
 import {Anime} from '../../../models/Anime';
 
+//Import the routing libs
+import {Router, ActivatedRoute, ParamMap} from '@angular/router';
+
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
@@ -21,6 +24,8 @@ export class ProfilePageComponent implements OnInit {
 
   constructor(
     private database:ProfileDatabase
+    private route: ActivatedRoute,
+    private router:Router
   ) { }
 
   ngOnInit() {
@@ -37,6 +42,10 @@ export class ProfilePageComponent implements OnInit {
     }).catch (function (error) {
       console.log(error);
     })
+  }
+
+  public editProfile() {
+    this.router.navigate(['/edit-profile'])
   }
 
   //KILLTHISCODE this is for testing purposes only

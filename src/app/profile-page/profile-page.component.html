@@ -1,20 +1,28 @@
 <div class = "profile-page">
+  <mat-card>
+    <h1 class = "mat-display-3 profile-name">{{user_profile.name}}</h1>
 
-  <h1 class = "mat-display-3 profile-name">{{user_profile.name}}</h1>
+    <div class = "btn-edit" fxLayout = "row" fxLayoutAlign = "end" class = "btn-edit" >
+      <button (click) = "editProfile()" mat-raised-button color = "primary">
+        Edit
+      </button>
+    </div>
+    <div>
+      <img class = "waifu-img" src = "{{user_profile.fav_waifu.image_url}}"/>
+    </div>
 
-  <img class = "waifu-img" src = "{{user_profile.fav_waifu.image_url}}"/>
-
-  <div class = "profile-bio">
-    <h1 class = "mat-typography profile-bio-header">Bio:</h1>
-    <p class = "mat-typography">
-      {{user_profile.bio}}
-    </p>
-  </div>
+    <div class = "profile-bio profile-content">
+      <h1 class = "mat-typography profile-bio-header">Bio:</h1>
+      <p class = "mat-typography">
+        {{user_profile.bio}}
+      </p>
+    </div>
 
 
-  <div class = "mat-typography fav-entertainment">
-    <p class = "entertainment-label">Favorite Show:</p>
-    <p class = "entertainment-title">{{user_profile.fav_entertainment.title}}</p>
-  </div>
+    <div class = "mat-typography fav-entertainment profile-content">
+      <p class = "entertainment-label">Favorite Show:</p>
+      <p class = "entertainment-title">{{user_profile.fav_entertainment.title}}</p>
+    </div>
 
+  </mat-card>
 </div>
