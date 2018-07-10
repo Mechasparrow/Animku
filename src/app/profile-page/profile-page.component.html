@@ -8,7 +8,7 @@
       </button>
     </div>
     <div>
-      <img class = "waifu-img" src = "{{user_profile.fav_waifu.image_url}}"/>
+      <img *ngIf = "user_profile.fav_waifu !== null"  class = "waifu-img" src = "{{user_profile.fav_waifu.image_url}}"/>
     </div>
 
     <div class = "profile-bio profile-content">
@@ -19,7 +19,7 @@
     </div>
 
 
-    <div class = "mat-typography fav-entertainment profile-content">
+    <div *ngIf = "user_profile.fav_entertainment !== null" class = "mat-typography fav-entertainment profile-content">
       <p class = "entertainment-label">Favorite Show:</p>
       <p class = "entertainment-title">{{user_profile.fav_entertainment.title}}</p>
     </div>

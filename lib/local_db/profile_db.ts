@@ -21,9 +21,10 @@ export class ProfileDatabase {
     let that = this;
 
     var profile_promise = new Promise((resolve, reject) => {
-      localForage.getItem('profile').then (function (profile:Profile) {
+        localForage.getItem('profile').then (function (profile:Profile){
 
         if(profile === null) {
+
           var new_profile:Profile = new Profile(
             "",
             "",
@@ -46,7 +47,6 @@ export class ProfileDatabase {
 
   //Updates the user profile
   public updateProfile(updated_profile:Profile) {
-
     let that = this;
 
     var profile_promise = new Promise((resolve, reject) => {

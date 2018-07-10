@@ -30,4 +30,15 @@ export class Profile {
     return Object.assign(profile, profile_json);
   }
 
+  static emptyProfile(): Profile {
+
+    return new Profile(
+      "",
+      "",
+      null,
+      null
+    )
+
+  }
+
 }
