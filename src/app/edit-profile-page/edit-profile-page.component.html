@@ -1,3 +1,18 @@
-<p>
-  edit-profile-page works!
-</p>
+<div class = "edit-profile-page">
+
+  <mat-card>
+    <form>
+      <mat-form-field class = "profile-input">
+        <input matInput [(ngModel)] = "userProfile.name" placeholder = "name" name = "user-name" />
+      </mat-form-field>
+
+      <mat-form-field class = "profile-input">
+        <textarea [(ngModel)] = "userProfile.bio" rows = "5" matInput placeholder = "bio" name = "user-bio"></textarea>
+      </mat-form-field>
+
+      <button (click) = "updateUserProfile()" mat-raised-button color ="accent" type = "submit">Submit</button>
+
+    </form>
+  </mat-card>
+
+</div>

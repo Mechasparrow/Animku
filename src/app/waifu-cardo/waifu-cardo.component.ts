@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 
 //Import the Waifu Model
 import {Waifu} from '../../../models/Waifu';
+import {Profile} from '../../../models/Profile';
 
 //Import the routing libs
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
