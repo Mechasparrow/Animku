@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 //Import the Anime model
 import {Anime} from '../../../models/Anime';
 import {Collection} from '../../../models/Collection';
-import {Profile} frmo '../../../models/Profile';
+import {Profile} from '../../../models/Profile';
 
 //Import the routing libs
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
