@@ -1,17 +1,34 @@
-<mat-card class="anime-cardo">
-  <mat-card-header>
-    <mat-card-title><h1>{{anime.title}}</h1></mat-card-title>
-  </mat-card-header>
+<mat-card  class="anime-cardo">
 
-  <img mat-card-image class = "anime-img" src="{{anime.image_url}}" alt="Photo of a Anime">
+  <div fxFlex fxLayout = "row" fxLayoutGap = "10px">
 
-  <mat-card-content>
 
-  </mat-card-content>
+    <div fxFlex = "3 3 calc(10em + 10)">
+    <mat-card-header fxLayoutAlign = "start" >
+      <mat-card-title><h1>{{anime.title}}</h1></mat-card-title>
+    </mat-card-header>
 
-  <mat-card-actions>
-    <button (click) = "viewAnime()" mat-button>View Anime</button>
-    <button (click) = "addAnime()" mat-button>Add Anime to Collection</button>
-    <button (click) = "addAnimeAsFav()" mat-button>Add Anime as your Favorite</button>
-  </mat-card-actions>
+    </div>
+
+    <div fxFlex = "1 1 calc(10em + 10)">
+      <img class = "anime-img" src="{{anime.image_url}}" alt="Photo of a Anime">
+    </div>
+
+
+  </div>
+
+  <div fxLayout = "column" fxLayoutAlign = "end start">
+
+
+    <mat-card-content>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button (click) = "viewAnime()" mat-button>View Anime</button>
+      <button (click) = "addAnime()" mat-button>Add Anime to Collection</button>
+      <button (click) = "addAnimeAsFav()" mat-button>Add Anime as your Favorite</button>
+    </mat-card-actions>
+  </div>
+
 </mat-card>
