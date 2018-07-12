@@ -17,6 +17,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 //Root Angular Component
 import { AppComponent } from './app.component';
@@ -92,6 +93,7 @@ const appRoutes:Routes = [
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
+    MatProgressSpinnerModule,
     RouterModule.forRoot(
       appRoutes,
       {enableTracing: true} //<-- For debugging only

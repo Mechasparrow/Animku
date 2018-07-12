@@ -19,6 +19,8 @@ export class WaifuPageComponent implements OnInit {
 
   public waifu_matrix:Waifu[][];
 
+  public loading:boolean;
+
   constructor(private api:WaifuApi) {
   }
 
@@ -27,8 +29,11 @@ export class WaifuPageComponent implements OnInit {
 
     let that = this;
 
+    that.loading = true;
+
     this.api.getBestWaifus().then (function (waifus:Waifu[]) {
       that.waifu_matrix = that.api.generateWaifuMatrix(waifus, 3);
+      that.loading = false;
     })
 
   }

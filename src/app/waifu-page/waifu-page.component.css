@@ -5,3 +5,9 @@
 .waifu-cards {
   margin-bottom: 8px;
 }
+
+.waifu-load-progress {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+}

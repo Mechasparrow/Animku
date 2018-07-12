@@ -2,6 +2,13 @@
 
 <div class = "waifu-page">
 
+  <div *ngIf = "loading">
+    <mat-progress-spinner
+      class = "waifu-load-progress"
+      color = "primary"
+      mode = "indeterminate"></mat-progress-spinner>
+  </div>
+
   <div *ngIf = "waifu_matrix">
     <div *ngFor = "let waifu_list of waifu_matrix">
       <div class = "waifu-cards" fxLayout.xs = "column" fxLayoutGap="10px" fxLayoutGap.xs="10px" fxLayoutAlign="space-around" >
