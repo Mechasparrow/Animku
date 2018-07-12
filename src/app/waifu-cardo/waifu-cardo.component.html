@@ -1,17 +1,21 @@
-<mat-card class="waifu-cardo">
-  <mat-card-header>
+<mat-card fxLayout = "column" class="waifu-cardo">
+  <mat-card-header fxLayoutAlign = "center">
     <mat-card-title><h1>{{waifu.name}}</h1></mat-card-title>
   </mat-card-header>
 
-  <img mat-card-image class = "waifu-img" src="{{getWaifuImage()}}" alt="Photo of a Waifu">
+  <div fxFlex fxLayoutAlign = "center center">
+    <img mat-card-image class = "waifu-img" src="{{getWaifuImage()}}" alt="Photo of a Waifu">
+  </div>
 
   <mat-card-content>
 
   </mat-card-content>
 
-  <mat-card-actions>
+  <mat-card-actions fxFlex fxLayoutAlign='center end'>
     <button (click) = "viewWaifu()" mat-button>View Waifu</button>
     <button (click) = "setFavWaifu()" mat-button>Set as Favorite Waifu</button>
   </mat-card-actions>
+
+
 
 </mat-card>

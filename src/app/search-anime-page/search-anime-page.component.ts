@@ -16,6 +16,8 @@ export class SearchAnimePageComponent implements OnInit {
 
   private test_query:string = "Steins;Gate";
 
+  public loading:boolean
+
   constructor(private api: AnimeApi) { }
 
   public anime_query:string = "";
@@ -31,9 +33,12 @@ export class SearchAnimePageComponent implements OnInit {
 
     let that = this;
 
+    that.loading = true;
+
     this.api.search(this.anime_query)
       .then ((anime:Anime[]) => {
         that.search_results = anime;
+        that.loading = false;
         console.log(JSON.stringify(that.search_results[1]));
       })
       .catch ((error) => {

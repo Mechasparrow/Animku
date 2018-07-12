@@ -13,3 +13,9 @@
 .anime-result {
   margin-bottom: 16px;
 }
+
+.anime-load-progress {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20vh;
+}
