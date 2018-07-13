@@ -1,3 +1,8 @@
+# UPDATES
+
+7/13/18 - Placed on back burner until further notice.
+
+
 # MyAnimeApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.8.
